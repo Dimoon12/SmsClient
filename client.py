@@ -1,8 +1,8 @@
 import requests
-
-token = "Your token here"
-
-while 1 == 1:
+#import token from file
+with open("token.txt", "r") as f:
+    token = f.read()
+while True:
 
     number = input("Номер:")
     while True:

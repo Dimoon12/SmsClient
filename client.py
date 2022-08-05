@@ -1,6 +1,6 @@
 import requests
 
-token = "db2bb923a29979184f454582fde8012653f6cc4c"
+token = "Your token here"
 
 while 1 == 1:
 

@@ -11,7 +11,7 @@ while True:
             if message == '/exit':
                 break
             elif message == '/help':
-                print("/exit - выход")
+                print("/exit - ввод номера")
                 print("/help - помощь")
             else:
                 print("Неизвестная команда")

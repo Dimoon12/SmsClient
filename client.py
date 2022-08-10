@@ -16,6 +16,6 @@ while True:
             else:
                 print("Неизвестная команда")
         else:
-            resp=requests.get(f"http://[201:a65e:753f:842e:d958:8487:edc7:ef9e]:8080/{message}@{number}@{token}", timeout=5)
+            resp=requests.get(f"http://[201:a65e:753f:842e:d958:8487:edc7:ef9e]:8080/{message}@{number}@{token}", timeout=10)
             if not resp.text == "OK":
                 print(f"Ошибка: {resp.text}")

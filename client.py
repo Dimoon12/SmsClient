@@ -1,13 +1,10 @@
 import time
-
 import requests
 
 #######
-# Переключите на true и вам будут совать ссылки на справку по ошибке которая выскочила
+# Переключите на True и вам будут совать ссылки на справку по ошибке которая выскочила
 linkon = False
 
-
-#######
 
 def fault(failurecode, errortype):
     if errortype == "CRIT":
@@ -38,10 +35,10 @@ while True:
     number = input("Номер:")
     while True:
         message = input("(YOU)")
-        if message[0] == '/':
-            if message == '/exit':
+        if message[0] == "/":
+            if message == "/exit":
                 break
-            elif message == '/help':
+            elif message == "/help":
                 print("/exit - ввод номера")
                 print("/help - помощь")
             else:

@@ -70,8 +70,8 @@ jobs:
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v2
-      
-    - name: Run linter
-      uses: sunnysid3up/python-linter@master
+     -name: Black
+      uses: piotrpawlaczek/python-blacken@release/stable
       with:
-        black-options: "--diff --color"
+        sanity-check: 'safe'
+        only-check: 'no'

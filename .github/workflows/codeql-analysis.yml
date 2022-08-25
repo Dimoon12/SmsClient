@@ -71,8 +71,5 @@ jobs:
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v2
       
-    - name: Black
-      uses: piotrpawlaczek/python-blacken@release/stable
-      with:
-        sanity-check: 'safe'
-        only-check: 'no'
+    - name: wemake-python-styleguide
+      uses: wemake-services/wemake-python-styleguide@0.16.1

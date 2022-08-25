@@ -13,10 +13,10 @@ name: "CodeQL"
 
 on:
   push:
-    branches: [ "master", "beta" ]
+    branches: [ "master", "Beta" ]
   pull_request:
     # The branches below must be a subset of the branches above
-    branches: [ "master", "beta" ]
+    branches: [ "master", "Beta" ]
   schedule:
     - cron: '35 18 * * 2'
 
@@ -71,5 +71,5 @@ jobs:
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v2
       
-    - name: Python Linter
+    - name: Run linter
       uses: sunnysid3up/python-linter@master

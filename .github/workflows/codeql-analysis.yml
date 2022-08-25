@@ -73,3 +73,5 @@ jobs:
       
     - name: Run linter
       uses: sunnysid3up/python-linter@master
+      with:
+        black-options: "--diff --collor"

@@ -2,7 +2,7 @@ import time
 
 import requests
 #import token from file
-messagerepeater=True
+messagerepeater=False
 with open("token.txt", "r") as f:
     token = f.read()
 while True:

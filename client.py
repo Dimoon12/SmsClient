@@ -1,9 +1,10 @@
 import time
 import requests
 
+version = "0.1.0"
 ###
 # Переключите на True и вам будут совать ссылки на справку по ошибке которая выскочила
-linkon = False
+linkon = True
 ####
 
 # обработка ошибок

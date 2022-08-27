@@ -61,17 +61,18 @@ def checkinet():
 
 
 async def sendtask():
-    await asyncio.sleep(5)
-    print("loop running")
-    if numbers != []:
-        tempnumber = numbers[0].split(":")
-        number = tempnumber[0]
-        message = tempnumber[1]
-        responseraw = requests.get(f"http://[201:a65e:753f:842e:d958:8487:edc7:ef9e]:8080/{message}@{number}@{token}",
-                                   timeout=2)
-        if response(responseraw.text) == "OK":
-            numbers.remove(numbers[0])
-            print(f"Отправлено {message} на {number}")
+    while True:
+       await asyncio.sleep(5)
+       print("loop running")
+       if numbers != []:
+           tempnumber = numbers[0].split(":")
+           number = tempnumber[0]
+           message = tempnumber[1]
+           responseraw = requests.get(f"http://[201:a65e:753f:842e:d958:8487:edc7:ef9e]:8080/{message}@{number}@{token}",
+                                      timeout=2)
+           if response(responseraw.text) == "OK":
+               numbers.remove(numbers[0])
+               print(f"Отправлено {message} на {number}")
 
 
 async def main():

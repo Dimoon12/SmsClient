@@ -1,10 +1,10 @@
 import time
 import requests
 
-version = "0.1.0"
+version = "0.1.1"
 ###
 # Переключите на True и вам будут совать ссылки на справку по ошибке которая выскочила
-linkon = True
+linkon = False
 ####
 
 # обработка ошибок
@@ -31,6 +31,8 @@ def checkinet():
 # import token from file
 with open("token.txt", "r") as f:
     token = f.read()
+
+    ####### исправить этот говнокод
 while True:
     checkinet()
     number = input("Номер:")

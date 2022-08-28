@@ -17,7 +17,6 @@ with open("token.txt", "r") as f:
 
 def response(serverresponse):
     if serverresponse == "OK":
-        print("Отправлено")
         return "ok"
     elif serverresponse == "F_ASS_DIED":
         fault("Ошибка отправки, пытаюсь повторно", "DEBG", "F_ASS_DIED")
@@ -62,21 +61,22 @@ def checkinet():
 
 async def sendtask():
     while True:
-       await asyncio.sleep(5)
-       print("loop running")
+       await asyncio.sleep(15)
+       print(numbers)
        if numbers != []:
            tempnumber = numbers[0].split(":")
            number = tempnumber[0]
            message = tempnumber[1]
            responseraw = requests.get(f"http://[201:a65e:753f:842e:d958:8487:edc7:ef9e]:8080/{message}@{number}@{token}",
-                                      timeout=2)
-           if response(responseraw.text) == "OK":
+                                      timeout=5)
+           if response(responseraw.text) == "ok":
                numbers.remove(numbers[0])
                print(f"Отправлено {message} на {number}")
 
 
 async def main():
    while True:
+       asyncio.create_task(sendtask())
        exitloop = False
        number = await ainput("Номер ")
        while True:
@@ -89,5 +89,5 @@ async def main():
                break
            else:
                numbers.append(f"{number}:{message}")
-asyncio.run(sendtask())
+           await sendtask()
 asyncio.run(main())
